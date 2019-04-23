@@ -2,8 +2,42 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8" />
+	<!-- Bootstrap Config : IE 최신 렌더링 모드를 사용 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Bootstrap Config : IE10은 viewport width 로 기기 너비 를 구분하지 않음. 이슈 발생시 아래 코드 참고.
+	CSS
+	@-webkit-viewport   { width: device-width; }
+	@-moz-viewport      { width: device-width; }
+	@-ms-viewport       { width: device-width; }
+	@-o-viewport        { width: device-width; }
+	@viewport           { width: device-width; }
+	JS
+	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+	  var msViewportStyle = document.createElement('style')
+	  msViewportStyle.appendChild(
+	    document.createTextNode(
+	      '@-ms-viewport{width:auto!important}'
+	    )
+	  )
+	  document.querySelector('head').appendChild(msViewportStyle)
+	}
+	-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Swinnus Vue Project</title>
+	<!-- Qunit CSS : uncompressed -->
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+	<!-- Bootstrap CSS : compressed -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- Bootstrap Theme : compressed -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/index.css">
+	<!-- Bootstrap Config : IE8이하 렌더링에 필요한 추가 리소스(호환성을 위한) -->
+	<!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -33,12 +67,18 @@
 	
 <footer></footer>
 
+<!-- Qunit -->
+<article id="qunit"></article>
 
-
-<!-- 도움되는 콘솔 경고를 포함한 개발 버전 -->
+<!-- Vue : uncompressed -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!-- 상용버전, 속도와 용량이 최적화됨. 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+<!-- jQuery : uncompressed -->
+<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+<!-- Qunit : uncompressed -->
+<script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+<!-- Bootstrap : compressed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
+<script src="test/index.js"></script>
 </body>
 </html>
